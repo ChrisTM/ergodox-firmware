@@ -107,9 +107,9 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
    // right hand
    _F12, _F6,     _F7,     _F8,     _F9,     _F10, _print,
-   0,    _pageU,  _home,   _end,    0,       0,    _volumeU,
+   0,    _home,   _pageD,   _pageU, _end,    0,    _volumeU,
          _arrowL, _arrowD, _arrowU, _arrowR, 0,    _volumeD,
-   0,    _pageD,  _end,    0,       0,       0,    _mute,
+   0,    0,       0,       0,       0,       0,    _mute,
                   0,       0,       0,       0,    0,
 
    0, 0,
@@ -195,9 +195,9 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
    // right hand
    kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-   NULL,   kprrel, kprrel, kprrel, NULL,   NULL,   kprrel,
+   NULL,   kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
            kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
-   NULL,   kprrel, kprrel, NULL,   NULL,   NULL,   kprrel,
+   NULL,   NULL,   NULL,   NULL,   NULL,   NULL,   kprrel,
                    NULL,   NULL,   NULL,   NULL,   NULL,
 
    ktrans, ktrans,
@@ -284,9 +284,9 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
 
    // right hand
    kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-   NULL,   kprrel, kprrel, kprrel, NULL,   NULL,   kprrel,
+   NULL,   kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
            kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
-   NULL,   kprrel, kprrel, NULL,   NULL,   NULL,   kprrel,
+   NULL,   NULL,   NULL,   NULL,   NULL,   NULL,   kprrel,
                    NULL,   NULL,   NULL,   NULL,   NULL,
 
    ktrans, ktrans,
