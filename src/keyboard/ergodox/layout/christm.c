@@ -25,6 +25,7 @@
 #define  kprrel  &kbfun_press_release
 #define  ktog    &kbfun_toggle
 #define  ktrans  &kbfun_transparent
+#define  mprrel  &kbfun_mediakey_press_release
 
 // layer push/pop functions
 #define  lpush1   &kbfun_layer_push_1
@@ -107,9 +108,9 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
    // right hand
    _F12, _F6,     _F7,     _F8,     _F9,     _F10, _print,
-   0,    _home,   _pageD,   _pageU, _end,    0,    _volumeU,
-         _arrowL, _arrowD, _arrowU, _arrowR, 0,    _volumeD,
-   0,    0,       0,       0,       0,       0,    _mute,
+   0,    _home,   _pageD,   _pageU, _end,    0,    MEDIAKEY_AUDIO_VOL_UP,
+         _arrowL, _arrowD, _arrowU, _arrowR, 0,    MEDIAKEY_AUDIO_VOL_DOWN,
+   0,    MEDIAKEY_PLAY_PAUSE, MEDIAKEY_AUDIO_VOL_DOWN, MEDIAKEY_AUDIO_VOL_UP, MEDIAKEY_PLAY_PAUSE, 0, MEDIAKEY_PLAY_PAUSE,
                   0,       0,       0,       0,    0,
 
    0, 0,
@@ -195,9 +196,9 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
    // right hand
    kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-   NULL,   kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
-           kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
-   NULL,   NULL,   NULL,   NULL,   NULL,   NULL,   kprrel,
+   NULL,   kprrel, kprrel, kprrel, kprrel, NULL,   mprrel,
+           kprrel, kprrel, kprrel, kprrel, NULL,   mprrel,
+   NULL,   mprrel, mprrel, mprrel, mprrel, NULL,   mprrel,
                    NULL,   NULL,   NULL,   NULL,   NULL,
 
    ktrans, ktrans,
@@ -284,9 +285,9 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
 
    // right hand
    kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-   NULL,   kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
-           kprrel, kprrel, kprrel, kprrel, NULL,   kprrel,
-   NULL,   NULL,   NULL,   NULL,   NULL,   NULL,   kprrel,
+   NULL,   kprrel, kprrel, kprrel, kprrel, NULL,   mprrel,
+           kprrel, kprrel, kprrel, kprrel, NULL,   mprrel,
+   NULL,   mprrel, mprrel, mprrel, mprrel, NULL,   mprrel,
                    NULL,   NULL,   NULL,   NULL,   NULL,
 
    ktrans, ktrans,
